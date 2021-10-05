@@ -13,3 +13,5 @@
   font-weight: 500;
   src: url(../assets/fonts/Poppins-Regular.woff2);
 }
+
+@import './buttons.css';

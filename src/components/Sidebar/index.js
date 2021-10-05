@@ -1,17 +1,22 @@
 import { useState } from 'react'
-import { Box, Home, LogOut, MoreVertical, Settings, User } from 'react-feather'
+import { Home, LogOut, MoreVertical, Settings, User } from 'react-feather'
+import {
+  bellsIcon,
+  clientsIcon,
+  giftIcon,
+  mailIcon
+} from '../../assets/icons/icons'
 
 // import useAuth from '@/hooks/useAuth'
+import useAuth from '../../hooks/useAuth'
 import SidebarLink from './SidebarLink'
-import SidebarCollapse from './SidebarCollapse'
+// import SidebarCollapse from './SidebarCollapse'
 
 const Sidebar = () => {
-  // const { LogoutAction } = useAuth()
+  const { LogoutAction, user, rol } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
 
   const onToggle = () => setIsOpen(!isOpen)
-
-  const LogoutAction = (params) => {}
 
   return (
     <>
@@ -24,11 +29,11 @@ const Sidebar = () => {
           <div className="rounded-full h-10 w-10 flex items-center justify-center mr-3 border-2 border-blue-500" />
           <div className="ml-1">
             <p className="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">
-              NOMBRE_USUARIO
+              {user}
             </p>
             <div className="badge">
               <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-800 bg-blue-100 rounded-full">
-                Conductor
+                {rol}
               </span>
             </div>
           </div>
@@ -45,11 +50,39 @@ const Sidebar = () => {
             <li>
               <SidebarLink icon={Home} label="Inicio" to="/" />
             </li>
-            <li>
+            {/* <li>
               <SidebarCollapse icon={Box} label="Despacho">
                 <SidebarLink label="Lista" to="/lista-despacho" />
                 <SidebarLink label="Crear Despacho" to="/nuevo-despacho" />
               </SidebarCollapse>
+            </li> */}
+            <li>
+              <SidebarLink
+                icon={giftIcon}
+                label="Pedidos"
+                to="/lista-pedidos"
+              />
+            </li>
+            <li>
+              <SidebarLink
+                icon={clientsIcon}
+                label="Clientes"
+                to="/lista-clientes"
+              />
+            </li>
+            <li>
+              <SidebarLink
+                icon={bellsIcon}
+                label="Newsletter"
+                to="/lista-newsletter"
+              />
+            </li>
+            <li>
+              <SidebarLink
+                icon={mailIcon}
+                label="Contactanos"
+                to="/lista-contactanos"
+              />
             </li>
             <li className="px-5">
               <div className="flex flex-row items-center h-8">

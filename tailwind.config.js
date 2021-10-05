@@ -16,8 +16,11 @@ const generatePalette = require('./src/@tailwind/utils/generate-palette')
  * Uses the generatePalette helper method to generate
  * Tailwind-like color palettes automatically
  */
-const customPalettes = {
-  brand: generatePalette('#0833a2')
+const colorPrimario = {
+  brand: generatePalette('#bb7ce8')
+}
+const colorSecundario = {
+  brand: generatePalette('#CFFFEA')
 }
 
 /**
@@ -28,12 +31,12 @@ const themes = {
   default: {
     primary: {
       // ...colors.green,
-      ...customPalettes.brand,
-      DEFAULT: customPalettes[600]
+      ...colorPrimario.brand,
+      DEFAULT: colorPrimario[600]
     },
     accent: {
-      ...colors.blueGray,
-      DEFAULT: '#0E1C3A'
+      ...colorSecundario.brand,
+      DEFAULT: colorSecundario.brand[600]
     },
     warn: {
       ...colors.red,
@@ -46,7 +49,7 @@ const themes = {
   // Rest of the themes will use the 'default' as the base theme
   // and extend them with their given configuration
   brand: {
-    primary: customPalettes.brand
+    primary: colorPrimario.brand
   },
   indigo: {
     primary: {

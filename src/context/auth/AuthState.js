@@ -5,13 +5,21 @@ import { AuthActions } from './AuthAction'
 export const initialState = {
   user: '',
   email: '',
-  rol: null
+  rol: null,
+  isAuth: false
 }
 
 export const AuthContext = createContext()
 
 const AuthState = ({ children }) => {
-  const [state, dispatch] = useReducer(AuthReducer, initialState)
+  const [state, dispatch] = useReducer(
+    AuthReducer,
+    localStorage.getItem('user')
+      ? JSON.parse(localStorage.getItem('user'))
+      : initialState
+  )
+
+  console.log('Estado : ', state)
 
   const props = {
     ...state,

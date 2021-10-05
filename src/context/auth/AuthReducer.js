@@ -4,11 +4,13 @@ import { initialState } from './AuthState'
 const AuthReducer = (state = initialState, { payload, type }) => {
   switch (type) {
     case LOGIN:
+      console.log('login reducer')
       return {
         ...state,
         user: payload.user,
         email: payload.email,
-        rol: payload.rol
+        rol: payload.rol,
+        isAuth: true
       }
 
     case LOGOUT:
