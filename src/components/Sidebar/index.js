@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Home, LogOut, MoreVertical, Settings, User } from 'react-feather'
 import {
-  bellsIcon,
-  clientsIcon,
-  giftIcon,
-  mailIcon
+  BellsIcon,
+  ClientsIcon,
+  GiftIcon,
+  MailIcon
 } from '../../assets/icons/icons'
 
 // import useAuth from '@/hooks/useAuth'
@@ -58,28 +58,28 @@ const Sidebar = () => {
             </li> */}
             <li>
               <SidebarLink
-                icon={giftIcon}
+                icon={GiftIcon}
                 label="Pedidos"
                 to="/lista-pedidos"
               />
             </li>
             <li>
               <SidebarLink
-                icon={clientsIcon}
+                icon={ClientsIcon}
                 label="Clientes"
                 to="/lista-clientes"
               />
             </li>
             <li>
               <SidebarLink
-                icon={bellsIcon}
+                icon={BellsIcon}
                 label="Newsletter"
                 to="/lista-newsletter"
               />
             </li>
             <li>
               <SidebarLink
-                icon={mailIcon}
+                icon={MailIcon}
                 label="Contactanos"
                 to="/lista-contactanos"
               />

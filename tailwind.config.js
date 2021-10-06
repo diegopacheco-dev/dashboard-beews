@@ -22,6 +22,9 @@ const colorPrimario = {
 const colorSecundario = {
   brand: generatePalette('#CFFFEA')
 }
+const colorTerciario = {
+  brand: generatePalette('#4a3f37')
+}
 
 /**
  * Themes
@@ -37,6 +40,11 @@ const themes = {
     accent: {
       ...colorSecundario.brand,
       DEFAULT: colorSecundario.brand[600]
+    },
+    tertiary: {
+      ...colorTerciario.brand,
+      100: '#F7F2ED',
+      DEFAULT: colorTerciario.brand[600]
     },
     warn: {
       ...colors.red,
