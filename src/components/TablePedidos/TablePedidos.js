@@ -58,22 +58,22 @@ const TablePedidos = ({ listaPedidos }) => {
       <thead>
         <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
           <th className="py-3 pl-3 text-left">Id Pedido</th>
-          <th className="py-3 px-6 text-left">Cliente</th>
+          <th className="py-3 px-6 text-center">Cliente</th>
           <th className="py-3 px-3 text-center">Celular</th>
           <th className="py-3 px-3 text-center">Direccion</th>
           <th className="py-3 px-3 text-center">Plan</th>
-          <th className="py-3 px-6 text-center">Estado</th>
+          <th className="py-3 px-6 text-right">Estado</th>
           <th></th>
         </tr>
       </thead>
-      <tbody className="text-gray-600 text-sm font-normal">
+      <tbody className="text-gray-700 text-md font-medium">
         {pedidos.map((pedido) => {
           return (
             <tr
               key={pedido.IdPedido}
               className="border-b border-gray-200 hover:bg-gray-100 cursor-pointer"
             >
-              <td className="py-3 px-3 text-center">
+              <td className="py-3 px-3 text-left">
                 <span>{pedido.IdPedido}</span>
               </td>
               <td className="py-3 px-3 text-center">
@@ -88,7 +88,7 @@ const TablePedidos = ({ listaPedidos }) => {
               <td className="py-3 px-3 text-center">
                 <span>{pedido.Plan}</span>
               </td>
-              <td className="py-3 px-3 text-center">
+              <td className="py-3 px-3 text-right">
                 <span>{pedido.Estado}</span>
               </td>
               <td></td>
