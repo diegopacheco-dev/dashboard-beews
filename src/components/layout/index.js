@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <Header onToggle={onToggle} />
         <div
           onClick={isOpen === true ? closeSideBar : null}
-          className="min-h-screen max-w-7xl md:w-11/12 mx-auto md:py-8 pt-13 md:pt-0"
+          className="min-h-screen max-w-7xl md:w-11/12 mx-auto md:py-8 pt-16 md:pt-0"
         >
           {children}
         </div>
