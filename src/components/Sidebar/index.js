@@ -1,4 +1,4 @@
-import { Home, LogOut, Settings, User } from 'react-feather'
+import { Home, LogOut } from 'react-feather'
 import {
   BellsIcon,
   ClientsIcon,
@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
                 </div>
               </div>
             </li>
-            <li>
+            <li onClick={onToggle}>
               <SidebarLink icon={Home} label="Inicio" to="/" />
             </li>
             {/* <li>
@@ -52,28 +52,28 @@ const Sidebar = ({ isOpen, onToggle }) => {
                 <SidebarLink label="Crear Despacho" to="/nuevo-despacho" />
               </SidebarCollapse>
             </li> */}
-            <li>
+            <li onClick={onToggle}>
               <SidebarLink
                 icon={GiftIcon}
                 label="Pedidos"
                 to="/lista-pedidos"
               />
             </li>
-            <li>
+            <li onClick={onToggle}>
               <SidebarLink
                 icon={ClientsIcon}
                 label="Clientes"
                 to="/lista-clientes"
               />
             </li>
-            <li>
+            <li onClick={onToggle}>
               <SidebarLink
                 icon={BellsIcon}
                 label="Newsletter"
                 to="/lista-newsletter"
               />
             </li>
-            <li>
+            <li onClick={onToggle}>
               <SidebarLink
                 icon={MailIcon}
                 label="Contactanos"
@@ -87,7 +87,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
                 </div>
               </div>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="#"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-tertiary hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6 transition-colors"
@@ -99,8 +99,8 @@ const Sidebar = ({ isOpen, onToggle }) => {
                   Perfil
                 </span>
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a
                 href="#"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-tertiary hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6 transition-colors"
@@ -112,7 +112,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
                   Cuenta
                 </span>
               </a>
-            </li>
+            </li> */}
             <li>
               <button
                 onClick={logoutAction}

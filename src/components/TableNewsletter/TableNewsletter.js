@@ -4,17 +4,17 @@ import React from 'react'
 const TableNewsletter = ({ listaNewsletter = [] }) => {
   const newsletter = [
     {
-      IdNewsletter: 132,
+      IdNewsletter: 138,
       Email: 'Av Pachacutec',
       Fecha: '05-10-2021'
     },
     {
-      IdNewsletter: 132,
+      IdNewsletter: 139,
       Email: 'Av Pachacutec',
       Fecha: '05-10-2021'
     },
     {
-      IdNewsletter: 132,
+      IdNewsletter: 140,
       Email: 'Av Pachacutec',
       Fecha: '05-10-2021'
     }

@@ -1,12 +1,22 @@
 import React from 'react'
 import { ExitIcon } from '../../assets/icons/icons'
 import Modal from '../Modal/Modal'
+import { REGALOS } from '../../assets/data/regalos'
+import { PLANES } from '../../assets/data/planes'
 
 const ModalDetallePedido = ({
   isOpen = false,
   onToggle = () => {},
   pedido
 }) => {
+  console.log(REGALOS)
+  console.log('regalos: ', pedido?.Regalos)
+
+  const total = pedido?.Regalos.reduce(
+    (cont, el) => (cont += REGALOS[el]?.price),
+    0
+  )
+
   return (
     <Modal {...{ isOpen, onToggle }}>
       <div className="w-full sm:max-w-3xl md:max-w-4xl lg:max-w-5xl h-screen sm:h-5/6 overflow-y-auto bg-white px-1 py-8 rounded-md flex flex-col">
@@ -175,7 +185,7 @@ const ModalDetallePedido = ({
             <h3 className="font-bold text-lg text-center">Regalos</h3>
             {/* Lista de regalos  */}
             <div className="w-full sm:w-10/12 ml-auto mr-auto flex flex-col items-center mt-5">
-              {/* Regalo  */}
+              {/* Plan  */}
               <div className="w-full rounded-lg mb-3 bg-primary-100 flex justify-between gap-0 sm:gap-2 items-center font-bold text-tertiary-500">
                 <div className="w-22 sm:w-24 p-2 sm:p-3">
                   <img
@@ -186,36 +196,46 @@ const ModalDetallePedido = ({
                 <div className="w-4/6">
                   <span className="font-bold text-sm">Detalle</span>
                   <p className="font-bold text-lg sm:text-2xl">
-                    Paquete Premium
+                    {PLANES[pedido?.IdPlan]?.title}
                   </p>
                 </div>
                 <div className="text-center w-2/6">
                   <span className="font-bold text-sm">Precio</span>
-                  <p className="font-bold text-lg sm:text-2xl">$/ 60</p>
-                </div>
-              </div>
-              <div className="w-full rounded-lg mb-3 bg-primary-100 flex justify-between gap-2 items-center font-bold text-tertiary-500">
-                <div className="w-22 sm:w-24 p-2 sm:p-3">
-                  <img
-                    src="https://beews-next.vercel.app/images/co-regalo-2.png"
-                    alt="imagen del regalo"
-                  />
-                </div>
-                <div className="w-4/6">
-                  <span className="font-bold text-sm">Detalle</span>
                   <p className="font-bold text-lg sm:text-2xl">
-                    Personal portrait
+                    $/ {PLANES[pedido?.IdPlan]?.price}
                   </p>
                 </div>
-                <div className="text-center w-2/6">
-                  <span className="font-bold text-sm">Precio</span>
-                  <p className="font-bold text-lg sm:text-2xl">$/ 60</p>
-                </div>
               </div>
+              {/* Regalos  */}
+              {pedido?.Regalos.map((regalo) => {
+                return (
+                  <div
+                    key={REGALOS[regalo]?.id}
+                    className="w-full rounded-lg mb-3 bg-primary-100 flex justify-between gap-2 items-center font-bold text-tertiary-500"
+                  >
+                    <div className="w-22 sm:w-24 p-2 sm:p-3">
+                      <img src={REGALOS[regalo]?.img} alt="imagen del regalo" />
+                    </div>
+                    <div className="w-4/6">
+                      <span className="font-bold text-sm">Detalle</span>
+                      <p className="font-bold text-lg sm:text-2xl">
+                        {/* {REGALOS[regalo]?.title} */}
+                      </p>
+                    </div>
+                    <div className="text-center w-2/6">
+                      <span className="font-bold text-sm">Precio</span>
+                      <p className="font-bold text-lg sm:text-2xl">
+                        $/ {REGALOS[regalo]?.price}
+                      </p>
+                    </div>
+                  </div>
+                )
+              })}
+
               {/* ===== Total =====  */}
               <div className="w-full rounded-lg mt-3 mb-3 bg-tertiary-500 text-white flex justify-between gap-2 items-center font-medium text-xl px-3 py-2">
                 <p>Total</p>
-                <p>$/ 120</p>
+                <p>$/ {total + PLANES[pedido?.IdPlan]?.price}</p>
               </div>
             </div>
           </div>

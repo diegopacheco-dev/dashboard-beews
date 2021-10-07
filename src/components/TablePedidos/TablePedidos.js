@@ -8,48 +8,54 @@ const pedidos = [
     Cliente: 'Usuario cliente',
     Celular: '999666333',
     Direccion: 'Av Pachacutec',
-    Plan: 'Xperience',
-    Estado: 'Entregado'
+    IdPlan: 1,
+    Estado: 'Entregado',
+    Regalos: [1, 2, 3]
   },
   {
     IdPedido: 134,
     Cliente: 'Usuario cliente',
     Celular: '999666333',
     Direccion: 'Av Pachacutec',
-    Plan: 'Xperience',
-    Estado: 'Entregado'
+    IdPlan: 1,
+    Estado: 'Entregado',
+    Regalos: [3, 4]
   },
   {
     IdPedido: 136,
     Cliente: 'Usuario cliente',
     Celular: '999666333',
     Direccion: 'Av Pachacutec',
-    Plan: 'Xperience',
-    Estado: 'Entregado'
+    IdPlan: 1,
+    Estado: 'Entregado',
+    Regalos: [4, 5]
   },
   {
     IdPedido: 137,
     Cliente: 'Usuario cliente',
     Celular: '999666333',
     Direccion: 'Av Pachacutec',
-    Plan: 'Xperience',
-    Estado: 'Entregado'
+    IdPlan: 2,
+    Estado: 'Entregado',
+    Regalos: [1, 6]
   },
   {
     IdPedido: 138,
     Cliente: 'Usuario cliente',
     Celular: '999666333',
     Direccion: 'Av Pachacutec',
-    Plan: 'Xperience',
-    Estado: 'Entregado'
+    IdPlan: 1,
+    Estado: 'Entregado',
+    Regalos: [2, 5]
   },
   {
     IdPedido: 140,
     Cliente: 'Usuario cliente',
     Celular: '999666333',
     Direccion: 'Av Pachacutec',
-    Plan: 'Xperience',
-    Estado: 'Entregado'
+    IdPlan: 2,
+    Estado: 'Entregado',
+    Regalos: [4, 5, 6]
   }
 ]
 
