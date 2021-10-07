@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Home, LogOut, MoreVertical, Settings, User } from 'react-feather'
+import { Home, LogOut, Settings, User } from 'react-feather'
 import {
   BellsIcon,
   ClientsIcon,
@@ -12,27 +11,24 @@ import useAuth from '../../hooks/useAuth'
 import SidebarLink from './SidebarLink'
 // import SidebarCollapse from './SidebarCollapse'
 
-const Sidebar = () => {
-  const { LogoutAction, user, rol } = useAuth()
-  const [isOpen, setIsOpen] = useState(false)
-
-  const onToggle = () => setIsOpen(!isOpen)
+const Sidebar = ({ isOpen, onToggle }) => {
+  const { logoutAction, user, rol } = useAuth()
 
   return (
     <>
       <div
-        className={`fixed z-10 transition-all flex flex-col top-0 md:left-0 w-64 bg-gray-900 h-full shadow-lg ${
+        className={`fixed z-10 transition-all flex flex-col top-0 md:left-0 w-64 bg-tertiary-200 h-full shadow-lg ${
           isOpen ? 'left-0' : '-left-full'
         }`}
       >
-        <div className="flex items-center pl-6 h-20 border-b border-gray-800">
-          <div className="rounded-full h-10 w-10 flex items-center justify-center mr-3 border-2 border-blue-500" />
+        <div className="flex items-center pl-6 h-20 border-b border-tertiary-300">
+          <div className="rounded-full h-11 w-11 flex items-center justify-center mr-3 border-2 border-primary" />
           <div className="ml-1">
-            <p className="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">
-              {user}
+            <p className="ml-1 text-lg sm:text-md font-bold tracking-wide truncate text-tertiary-500 font-sans">
+              {user.replace(/./, (c) => c.toUpperCase())}
             </p>
             <div className="badge">
-              <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-800 bg-blue-100 rounded-full">
+              <span className="px-2 py-0.5 ml-auto text-sm sm:text-xs font-bold sm:font-medium tracking-wide text-tertiary-400 bg-primary-300 rounded-full">
                 {rol}
               </span>
             </div>
@@ -42,7 +38,7 @@ const Sidebar = () => {
           <ul className="flex flex-col py-6 space-y-1">
             <li className="px-5">
               <div className="flex flex-row items-center h-8">
-                <div className="flex font-semibold text-sm text-gray-300 my-4 font-sans uppercase">
+                <div className="flex font-semibold text-md sm:text-sm text-primary-700 my-4 font-sans uppercase">
                   Dashboard
                 </div>
               </div>
@@ -86,7 +82,7 @@ const Sidebar = () => {
             </li>
             <li className="px-5">
               <div className="flex flex-row items-center h-8">
-                <div className="flex font-semibold text-sm text-gray-300 my-4 font-sans uppercase">
+                <div className="flex font-semibold text-md sm:text-sm text-primary-700 my-4 font-sans uppercase">
                   Configuraciones
                 </div>
               </div>
@@ -94,7 +90,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="#"
-                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6 transition-colors"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-tertiary hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6 transition-colors"
               >
                 <span className="inline-flex justify-center items-center ml-4">
                   <User className="w-5 h-5" />
@@ -107,7 +103,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="#"
-                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6 transition-colors"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-tertiary hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6 transition-colors"
               >
                 <span className="inline-flex justify-center items-center ml-4">
                   <Settings className="w-5 h-5" />
@@ -119,8 +115,8 @@ const Sidebar = () => {
             </li>
             <li>
               <button
-                onClick={LogoutAction}
-                className="relative w-full flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6"
+                onClick={logoutAction}
+                className="relative w-full flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-tertiary hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4 text-red-400">
                   <LogOut className="w-5 h-5" />
@@ -133,12 +129,12 @@ const Sidebar = () => {
           </ul>
         </div>
       </div>
-      <button
+      {/* <button
         onClick={onToggle}
         className="fixed md:hidden bottom-5 right-5 rounded-full bg-blue-500 text-white p-2"
       >
         <MoreVertical />
-      </button>
+      </button> */}
     </>
   )
 }

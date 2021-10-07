@@ -43,7 +43,9 @@ const themes = {
     },
     tertiary: {
       ...colorTerciario.brand,
+      50: '#F4F4F4',
       100: '#F7F2ED',
+      200: '#E9E1DC',
       DEFAULT: colorTerciario.brand[600]
     },
     warn: {

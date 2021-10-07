@@ -10,7 +10,7 @@ const ListaPedidos = () => {
   }
 
   return (
-    <div className="md:shadow md:rounded bg-white p-5 py-10 md:p-10">
+    <div className="shadow md:rounded bg-white p-5 py-10 md:p-10">
       <h1 className="flex items-center text-xl md:text-2xl font-regular tracking-wide mb-5">
         LISTA DE PEDIDOS
       </h1>

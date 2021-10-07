@@ -7,9 +7,9 @@ export const AuthActions = (state, dispatch) => {
   }
 
   const logoutAction = () => {
+    console.log('cerrar sesion')
     localStorage.removeItem('user')
     dispatch({ type: LOGOUT })
   }
-
   return { loginAction, logoutAction }
 }
