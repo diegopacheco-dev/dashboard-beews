@@ -219,7 +219,7 @@ const ModalDetallePedido = ({
                     <div className="w-4/6">
                       <span className="font-bold text-sm">Detalle</span>
                       <p className="font-bold text-lg sm:text-2xl">
-                        {/* {REGALOS[regalo]?.title} */}
+                        {REGALOS[regalo]?.title}
                       </p>
                     </div>
                     <div className="text-center w-2/6">
